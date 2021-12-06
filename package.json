@@ -1,0 +1,29 @@
+{
+  "name": "ndut-static",
+  "version": "0.0.1",
+  "description": "Static Assets for Ndut Framework",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ardhi/ndut-static.git"
+  },
+  "keywords": [
+    "ndut",
+    "fastify",
+    "static",
+    "assets"
+  ],
+  "author": "Ardhi Lukianto <ardhi@lukianto.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ardhi/ndut-static/issues"
+  },
+  "homepage": "https://github.com/ardhi/ndut-static#readme",
+  "dependencies": {
+    "fastify-static": "^4.5.0",
+    "ndut-helper": "file:../ndut-helper"
+  }
+}
