@@ -17,10 +17,11 @@ const plugin = fp(async function (fastify, options) {
 
 module.exports = async function (fastify) {
   const { config } = fastify
+  const name = 'ndut-static'
   const options = getNdutConfig(fastify, 'ndut-static') || {}
   options.root = options.root || (config.dir.base + '/static')
   options.prefix = options.prefix || 'assets'
   if (!path.isAbsolute(options.root)) options.root = pathResolve(options.root)
   fs.ensureDirSync(options.root)
-  return { options, plugin, registerEarly: true }
+  return { name, options, plugin, registerEarly: true }
 }
