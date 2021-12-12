@@ -3,7 +3,7 @@ const { pathResolve } = aneka
 const path = require('path')
 const fastifyStatic = require('fastify-static')
 
-const plugin = fp(async function (fastify, options) {
+const earlyPlugin = fp(async function (fastify, options) {
   if (options.disabled) {
     fastify.log.debug('- fastify-static')
   } else {
@@ -23,5 +23,5 @@ module.exports = async function (fastify) {
   options.prefix = options.prefix || 'assets'
   if (!path.isAbsolute(options.root)) options.root = pathResolve(options.root)
   fs.ensureDirSync(options.root)
-  return { name, options, plugin, registerEarly: true }
+  return { name, options, earlyPlugin }
 }
