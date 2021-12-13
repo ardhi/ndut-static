@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/ardhi/ndut-static#readme",
   "dependencies": {
-    "fastify-static": "^4.5.0",
-    "ndut-helper": "file:../ndut-helper"
+    "fastify-plugin": "^3.0.0",
+    "fastify-static": "^4.5.0"
   }
 }

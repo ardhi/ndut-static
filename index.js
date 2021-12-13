@@ -1,9 +1,9 @@
-const { _, fp, fs, aneka, getNdutConfig } = require('ndut-helper')
-const { pathResolve } = aneka
 const path = require('path')
+const fp = require('fastify-plugin')
 const fastifyStatic = require('fastify-static')
 
 const earlyPlugin = fp(async function (fastify, options) {
+  const { _ } = fastify.ndut.helper
   if (options.disabled) {
     fastify.log.debug('- fastify-static')
   } else {
@@ -16,6 +16,8 @@ const earlyPlugin = fp(async function (fastify, options) {
 })
 
 module.exports = async function (fastify) {
+  const { fs, aneka, getNdutConfig } = fastify.ndut.helper
+  const { pathResolve } = aneka
   const { config } = fastify
   const name = 'ndut-static'
   const options = getNdutConfig(fastify, 'ndut-static') || {}
