@@ -1,6 +1,6 @@
 {
   "name": "ndut-static",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Static Assets for Ndut Framework",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,7 @@
     "ndut",
     "fastify",
     "static",
+    "public",
     "assets"
   ],
   "author": "Ardhi Lukianto <ardhi@lukianto.com>",
