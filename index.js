@@ -7,7 +7,6 @@ module.exports = async function (fastify) {
   const name = 'ndut-static'
   const options = getNdutConfig(fastify, 'ndut-static') || {}
   options.root = options.root || (config.dir.base + '/static')
-  options.prefix = options.prefix || 'assets'
   if (!path.isAbsolute(options.root)) options.root = pathResolve(options.root)
   fs.ensureDirSync(options.root)
   const earlyPlugin = fp(require('./lib/early-plugin'))
