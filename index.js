@@ -8,7 +8,6 @@ module.exports = async function () {
   const options = getNdutConfig('ndut-static') || {}
   options.root = options.root || (config.dir.base + '/static')
   if (!path.isAbsolute(options.root)) options.root = pathResolve(options.root)
-  fs.ensureDirSync(options.root)
   const earlyPlugin = fp(require('./lib/early-plugin'))
 
   return { name, options, earlyPlugin }
