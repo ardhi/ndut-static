@@ -1,6 +1,6 @@
 {
   "name": "ndut-static",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Static Assets for Ndut Framework",
   "main": "index.js",
   "scripts": {
