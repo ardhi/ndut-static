@@ -21,6 +21,6 @@ module.exports = async function () {
     nOpts.prefix = n.name === 'app' ? ('/' + opts.prefix) : (opts.prefix + '/' + n.prefix)
     if (n.name !== 'app') nOpts.decorateReply = false
     await this.register(fastifyStatic, nOpts)
-    this.log.debug(`* Serve ${n.name === 'app' ? opts.prefix : 'nOpts.prefix}/*'}`)
+    this.log.debug(`* Serve ${n.name === 'app' ? opts.prefix : (nOpts.prefix + '/*')}`)
   }
 }
