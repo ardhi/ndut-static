@@ -1,9 +1,8 @@
 const fastifyStatic = require('fastify-static')
 
-module.exports = async function () {
+module.exports = async function (options) {
   const { _, fs, aneka, defNdutKeys, getConfig, getNdutConfig } = this.ndut.helper
   const config = await getConfig()
-  const options = await getNdutConfig('ndut-static')
   const { requireBase } = aneka
   this.log.debug('* fastify-static')
   const opts = _.cloneDeep(_.omit(options, defNdutKeys))
