@@ -22,7 +22,7 @@ module.exports = async function (scope, options) {
     nOpts.prefix = cfg.name === 'app' ? '' : ('/' + cfg.prefix)
     if (cfg.name !== 'app') nOpts.decorateReply = false
     await scope.register(fastifyStatic, nOpts)
-    scope.log.debug(`* Serve ${cfg.name === 'app' ? opts.prefix : (nOpts.prefix + '/*')}`)
+    scope.log.debug(`* Serve /${opts.prefix}${nOpts.prefix}/*`)
   }
   await handleMisc.call(scope)
 }
